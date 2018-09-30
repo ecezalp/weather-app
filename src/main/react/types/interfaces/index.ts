@@ -1,5 +1,6 @@
 export interface Store {
   landing: LandingState,
+  autocomplete: InputWithAutocompleteState,
 }
 
 export interface Action<T extends string> {
@@ -15,6 +16,7 @@ export interface LandingState {
   isInputVisible: boolean,
   inputValue: string,
   inputError: string,
+  cityId: number,
 }
 
 export interface LandingProps {
@@ -26,9 +28,16 @@ export interface LandingProps {
   inputError: string,
 }
 
+export interface InputWithAutocompleteState {
+  suggestions: CityWithId[];
+}
+
 export interface InputWithAutocompleteProps {
+  setInputValueAndId: (payload: CityWithId) => any,
+  setSuggestions: (payload: CityWithId[]) => any,
+  suggestions: CityWithId[],
   placeholder: string,
-  handleChange: (payload: any) => any,
+  onChange: (payload: any) => any,
   value: string,
 }
 

@@ -1,11 +1,15 @@
-import {ActionWithPayload} from "../actions/actionTypeHelpers";
-import {LandingActionType, LandingState} from "../types/Landing";
-import {SET_INPUT_ERROR, SET_INPUT_VALUE, SET_IS_INPUT_VISIBLE} from "../actions/actionConstants";
+import {
+  SET_INPUT_ERROR, SET_INPUT_VALUE, SET_INPUT_VALUE_AND_ID,
+  SET_IS_INPUT_VISIBLE
+} from "../actions/actionConstants";
+import {ActionWithPayload, LandingState} from "../types/interfaces";
+import {LandingActionType} from "../types/actions";
 
 const initialState: LandingState = {
   isInputVisible: false,
   inputValue: "",
   inputError: "",
+  cityId: 0,
 };
 
 
@@ -15,10 +19,11 @@ const landingReducer = (state = initialState,
     case SET_IS_INPUT_VISIBLE:
       return {...state, isInputVisible: true};
     case SET_INPUT_VALUE:
-      return {...state, inputValue: action.payload, inputError: ""};
+      return {...state, inputValue: action.payload ? action.payload : "", inputError: ""};
     case SET_INPUT_ERROR:
-      console.log(action);
       return {...state, inputError: action.payload};
+    case SET_INPUT_VALUE_AND_ID:
+      return {...state, inputValue: action.payload.name, cityId: action.payload.id};
     default:
       return state;
   }

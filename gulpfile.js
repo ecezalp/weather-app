@@ -34,9 +34,6 @@ const WEBPACK_SRC_CONFIG = {
           presets: ['react', 'env', 'stage-2']
         }
       }, {
-        test: /\.json$/,
-        loader: 'json-loader'
-      }, {
         test: /\.(scss|css)$/,
         use: [
           MiniCssExtractPlugin.loader,
@@ -67,7 +64,11 @@ const WEBPACK_SRC_CONFIG = {
     new MiniCssExtractPlugin({
       filename: "bundle.css",
     }),
-  ]
+  ], optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  }
 };
 
 const WEBPACK_BUILD_CONFIG = _.merge({}, WEBPACK_SRC_CONFIG, {

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import InputWithAutocomplete from "../elements/inputWithAutocomplete";
 import {LandingProps} from "../../../types/interfaces";
+import InputWithAutocompleteContainer from "../../containers/InputWithAutocompleteContainer";
 
 const Landing: React.SFC<LandingProps> = ({
                                             setIsInputVisible,
@@ -21,7 +21,7 @@ const Landing: React.SFC<LandingProps> = ({
     </span>;
 
   const intro = <div className="intro">
-    You are sitting on your couch, sipping on your coffee. Suddenly, you wonder: is it a wet fog that is outside, or
+    You are sitting on your couch, sipping on your coffee. Suddenly, you wonder what is outside: is it a wet fog, or
     the warming rays of the new sun? The curtains are closed. You remember the name of the {city} you live in.
   </div>;
 
@@ -32,9 +32,12 @@ const Landing: React.SFC<LandingProps> = ({
     {element}
   </div>;
 
-  const textField = <InputWithAutocomplete
+  const handleTextChange = (e: any) =>
+    e.type === "change" && setInputValue(e.target.value);
+
+  const textField = <InputWithAutocompleteContainer
     placeholder="city"
-    handleChange={(e: any) => setInputValue(e.target.value)}
+    onChange={handleTextChange}
     value={inputValue}
   />;
 
