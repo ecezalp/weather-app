@@ -2,7 +2,7 @@ import * as React from 'react';
 import {LandingProps} from "../../../types/interfaces";
 import InputWithAutocompleteContainer from "../../containers/InputWithAutocompleteContainer";
 
-const Landing: React.SFC<LandingProps> = ({
+const Landing: React.SFC<LandingProps> = ({ cityId,
                                             setIsInputVisible,
                                             isInputVisible,
                                             inputValue,
@@ -25,9 +25,9 @@ const Landing: React.SFC<LandingProps> = ({
     the warming rays of the new sun? The curtains are closed. You remember the name of the {city} you live in.
   </div>;
 
-  const withAnimation = (element: any) => <div
-    style={!isInputVisible ? ({visibility: "hidden"}) : {}}
-    className={isInputVisible && "animate"}
+  const withAnimation = (element: any, condition: boolean) => <div
+    style={!condition ? ({visibility: "hidden"}) : {}}
+    className={condition && "animate"}
   >
     {element}
   </div>;
@@ -54,9 +54,9 @@ const Landing: React.SFC<LandingProps> = ({
   return <div className="landing-container">
     {title}
     {intro}
-    {withAnimation(textField)}
+    {withAnimation(textField, isInputVisible)}
     {inputErrorMessage}
-    {withAnimation(submitButton)}
+    {withAnimation(submitButton, cityId !== 0)}
   </div>;
 };
 

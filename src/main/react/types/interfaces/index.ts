@@ -26,6 +26,7 @@ export interface LandingProps {
   isInputVisible: boolean,
   inputValue: string,
   inputError: string,
+  cityId: number,
 }
 
 export interface InputWithAutocompleteState {
