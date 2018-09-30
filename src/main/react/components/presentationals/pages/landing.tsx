@@ -7,6 +7,7 @@ const Landing: React.SFC<LandingProps> = ({ cityId,
                                             isInputVisible,
                                             inputValue,
                                             setInputValue,
+                                            setInputValueAndId,
                                             submitInput,
                                             inputError
                                           }) => {
@@ -32,17 +33,21 @@ const Landing: React.SFC<LandingProps> = ({ cityId,
     {element}
   </div>;
 
-  const handleTextChange = (e: any) =>
+  const handleTextChange = (e: any) => {
+    if (e.key === "Backspace") {
+      return setInputValueAndId({name: e.target.value, id: 0, country: ""});
+    }
     e.type === "change" && setInputValue(e.target.value);
+  };
 
   const textField = <InputWithAutocompleteContainer
     placeholder="city"
-    onChange={handleTextChange}
+    onKeyDown={handleTextChange}
     value={inputValue}
   />;
 
   const submitButton = <button
-    onClick={() => submitInput(inputValue)}>
+    onClick={() => submitInput(inputValue, cityId)}>
     Submit
   </button>;
 

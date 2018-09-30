@@ -13,8 +13,7 @@ export const setInputValue = (value: string) => createAction(SET_INPUT_VALUE, va
 
 export const setInputError = (errorMessage: string) => createAction(SET_INPUT_ERROR, errorMessage);
 
-export const setInputValueAndId = (suggestions: CityWithId) => createAction(SET_INPUT_VALUE_AND_ID, suggestions);
-
+export const setInputValueAndId = (suggestion: CityWithId) => createAction(SET_INPUT_VALUE_AND_ID, suggestion);
 
 // input with autocomplete action creators
 

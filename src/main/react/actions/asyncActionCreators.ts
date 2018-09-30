@@ -2,8 +2,9 @@ import axios from 'axios';
 
 import * as actions from "./actionCreators";
 
-export const submitInput = (dispatch: any, inputValue: string) => {
+export const submitInput = (dispatch: any, inputValue: string, cityId: number) => {
   if(!inputValue) return dispatch(actions.setInputError("Please enter a city name"));
+  if(cityId === 0) return dispatch(actions.setInputError("Please pick a city from the list"));
 
 
   // dispatch(actions.setFetchingTokenTrue());
@@ -17,30 +18,3 @@ export const submitInput = (dispatch: any, inputValue: string) => {
   //     dispatch(actions.setFetchingTokenFalse());
   //   });
 };
-//
-// const setPicturesFromLink = (url, dispatch, handleSuccess) => {
-//   dispatch(actions.setFetchingPicturesTrue());
-//   return axios.get(url)
-//     .then(response => {
-//       handleSuccess();
-//       dispatch(actions.setPicturesFromInsta(response.data));
-//       dispatch(actions.clearSearchInput());
-//     })
-//     .catch(() => dispatch(actions.clearSearchInput()));
-// };
-//
-// export const search = (dispatch, term, token) => {
-//   const url = `https://api.instagram.com/v1/tags/${term.replace("#", "")}/media/recent?access_token=${token}`;
-//   setPicturesFromLink(url, dispatch, () => {});
-// };
-//
-// export const getPictureDataFromInstagram = (dispatch, token, handleSuccess) => {
-//   const url = `https://api.instagram.com/v1/users/self/media/recent?access_token=${token}`;
-//   setPicturesFromLink(url, dispatch, handleSuccess);
-// };
-//
-// export const getPictureTags = (dispatch, picture) => {
-//   dispatch(actions.setFetchingTagsTrue());
-//   return axios.post(`/api/tags`, picture)
-//     .then(response => dispatch(actions.setVisionTags(response.data)));
-// };

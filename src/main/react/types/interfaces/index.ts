@@ -20,9 +20,10 @@ export interface LandingState {
 }
 
 export interface LandingProps {
-  setIsInputVisible: (payload: boolean) => any,
-  setInputValue: (payload: string) => any,
-  submitInput: (payload: string) => any,
+  setInputValueAndId: (suggestion: CityWithId) => any,
+  setIsInputVisible: (isInputVisible: boolean) => any,
+  setInputValue: (inputValue: string) => any,
+  submitInput: (inputValue: string, cityId: number) => any,
   isInputVisible: boolean,
   inputValue: string,
   inputError: string,
@@ -34,11 +35,11 @@ export interface InputWithAutocompleteState {
 }
 
 export interface InputWithAutocompleteProps {
-  setInputValueAndId: (payload: CityWithId) => any,
+  setInputValueAndId: (suggestion: CityWithId) => any,
   setSuggestions: (payload: CityWithId[]) => any,
   suggestions: CityWithId[],
   placeholder: string,
-  onChange: (payload: any) => any,
+  onKeyDown: (payload: any) => any,
   value: string,
 }
 

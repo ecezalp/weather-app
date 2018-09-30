@@ -9,7 +9,7 @@ import {CityWithId, InputWithAutocompleteState, Store} from "../../types/interfa
 const mapStateToProps = (state: Store): InputWithAutocompleteState => ({...state.autocomplete});
 
 const mapDispatchToProps = (dispatch: any) => ({
-  setInputValueAndId: (payload: CityWithId) => dispatch(actions.setInputValueAndId(payload)),
+  setInputValueAndId: (suggestion: CityWithId) => dispatch(actions.setInputValueAndId(suggestion)),
   setSuggestions: (payload: CityWithId[]) => dispatch(actions.setSuggestions(payload)),
 });
 
