@@ -1,0 +1,83 @@
+$background_color: #ADDFFF;
+$accent_color_1: #FDF6E3;
+$accent_color_1_compliment: #CB4B15;
+$accent_color_2: #F2DEDD;
+$accent_color_2_compliment: #CF7C7B;
+
+@import "spinner";
+@import "checkbox";
+
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.app-container {
+  background-color: $background_color;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.25px;
+  line-height: 1.5;
+  font-family: "Quicksand", sans-serif;
+  -webkit-font-smoothing: antialiased;
+
+  .landing-container {
+    min-width: 300px;
+    min-height: 500px;
+    width: 20vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+
+    .intro {
+      padding: 5vh 0;
+
+      .artificial-link {
+        color: blue;
+        font-family: sans-serif;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    .animate {
+      -webkit-animation: fadein 3s;
+    }
+
+    input {
+      background-color: $accent_color_1;
+      color: $accent_color_1_compliment;
+      font-size: 1.1rem;
+      margin-top: 5vh;
+      width: 60%;
+    }
+
+    input::placeholder {
+      color: gray;
+      font-weight: normal;
+    }
+
+    button {
+      margin-top: 3vh;
+      background-color: #f2dedd;
+      color: #cf7c7b;
+      width: 30%;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      padding: 5px;
+    }
+
+    .input-error {
+      color: $accent_color_1_compliment;
+    }
+  }
+}
+
+
+body {
+  margin: 0 !important;
+}
+
