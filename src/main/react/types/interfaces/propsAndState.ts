@@ -1,15 +1,9 @@
+import {CityWithId} from "./domain";
+
 export interface Store {
   landing: LandingState,
   autocomplete: InputWithAutocompleteState,
-}
-
-export interface Action<T extends string> {
-  type: T
-}
-
-export interface ActionWithPayload<T extends string, P> {
-  type: T,
-  payload: P
+  weather: WeatherState,
 }
 
 export interface LandingState {
@@ -17,6 +11,7 @@ export interface LandingState {
   inputValue: string,
   inputError: string,
   cityId: number,
+  isFetchingData: boolean,
 }
 
 export interface LandingProps {
@@ -28,6 +23,7 @@ export interface LandingProps {
   inputValue: string,
   inputError: string,
   cityId: number,
+  isFetchingData: boolean,
 }
 
 export interface InputWithAutocompleteState {
@@ -41,10 +37,13 @@ export interface InputWithAutocompleteProps {
   placeholder: string,
   onKeyDown: (payload: any) => any,
   value: string,
+  disabled: boolean,
 }
 
-export interface CityWithId {
-  name: string,
-  country: string,
-  id: number,
+export interface WeatherState {
+
+}
+
+export interface SpinnerProps {
+  isVisible: boolean,
 }

@@ -1,15 +1,18 @@
 import * as React from 'react';
-import {LandingProps} from "../../../types/interfaces";
 import InputWithAutocompleteContainer from "../../containers/InputWithAutocompleteContainer";
+import {LandingProps} from "../../../types/interfaces/propsAndState";
+import Spinner from "../elements/spinner";
 
-const Landing: React.SFC<LandingProps> = ({ cityId,
+const Landing: React.SFC<LandingProps> = ({
+                                            cityId,
                                             setIsInputVisible,
                                             isInputVisible,
                                             inputValue,
                                             setInputValue,
                                             setInputValueAndId,
                                             submitInput,
-                                            inputError
+                                            inputError,
+                                            isFetchingData
                                           }) => {
 
   const title = <h1>Ece's Weather App</h1>;
@@ -27,8 +30,8 @@ const Landing: React.SFC<LandingProps> = ({ cityId,
   </div>;
 
   const withAnimation = (element: any, condition: boolean) => <div
-    style={!condition ? ({visibility: "hidden"}) : {}}
-    className={condition && "animate"}
+    style={{visibility: condition ? "visible" : "hidden"}}
+    className={condition ? "animate" : ""}
   >
     {element}
   </div>;
@@ -44,6 +47,7 @@ const Landing: React.SFC<LandingProps> = ({ cityId,
     placeholder="city"
     onKeyDown={handleTextChange}
     value={inputValue}
+    disabled={isFetchingData}
   />;
 
   const submitButton = <button
@@ -56,12 +60,18 @@ const Landing: React.SFC<LandingProps> = ({ cityId,
       {inputError}
     </div>;
 
+  const spinner = <Spinner isVisible={isFetchingData}/>;
+
+  console.log(process);
+  console.log(process.env);
+
   return <div className="landing-container">
     {title}
     {intro}
     {withAnimation(textField, isInputVisible)}
     {inputErrorMessage}
     {withAnimation(submitButton, cityId !== 0)}
+    {spinner}
   </div>;
 };
 

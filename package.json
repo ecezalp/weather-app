@@ -31,6 +31,8 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.7",
+    "dotenv": "^6.0.0",
+    "dotenv-webpack": "^1.5.7",
     "file-loader": "^1.1.6",
     "gulp": "^3.9.1",
     "gulp-eslint": "^4.0.0",

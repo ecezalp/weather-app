@@ -1,13 +1,9 @@
-import axios from 'axios';
-
-import * as actions from "./actionCreators";
+import * as actions from "../actionCreators";
 
 export const submitInput = (dispatch: any, inputValue: string, cityId: number) => {
-  if(!inputValue) return dispatch(actions.setInputError("Please enter a city name"));
-  if(cityId === 0) return dispatch(actions.setInputError("Please pick a city from the list"));
+  if (!inputValue || cityId === 0) return dispatch(actions.setInputError("Please pick a city"));
 
-
-  // dispatch(actions.setFetchingTokenTrue());
+  dispatch(actions.setIsFetchingData(true));
   // return axios.get(`/api/authentication`)
   //   .then(response => {
   //     persistStateOnLocalStorage(state);

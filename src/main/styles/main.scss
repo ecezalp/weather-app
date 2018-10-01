@@ -3,6 +3,7 @@ $accent_color_1: #FDF6E3;
 $accent_color_1_compliment: #CB4B15;
 $accent_color_2: #F2DEDD;
 $accent_color_2_compliment: #CF7C7B;
+$accent_color_3: #f4c20d;
 
 @import "spinner";
 @import "checkbox";
@@ -26,11 +27,12 @@ $accent_color_2_compliment: #CF7C7B;
 
   .landing-container {
     min-width: 300px;
-    min-height: 500px;
+    min-height: 600px;
     width: 20vw;
-    height: 40vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 
     .intro {
       padding: 5vh 0;
@@ -44,7 +46,9 @@ $accent_color_2_compliment: #CF7C7B;
     }
 
     .animate {
-      -webkit-animation: fadein 2s;
+      display: flex;
+      justify-content: center;
+      -webkit-animation: fadein 1s;
     }
 
     input {

@@ -14,9 +14,18 @@ var GLOBS = {
 };
 
 // Webpack Configuration
+var webpack = require('webpack');
 var webpackStream = require('webpack-stream');
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var _ = require('lodash');
+
+//dotenv for Webpack
+var dotenv = require('dotenv');
+var dotenvRawVariables = dotenv.config().parsed;
+var dotenvProcessedVariables = Object.keys(dotenvRawVariables).reduce((acc, item) => {
+  acc[item] = JSON.stringify(dotenvRawVariables[item]);
+  return acc;
+}, {});
 
 const WEBPACK_SRC_CONFIG = {
   mode: "production",
@@ -63,6 +72,9 @@ const WEBPACK_SRC_CONFIG = {
   }, plugins: [
     new MiniCssExtractPlugin({
       filename: "bundle.css",
+    }),
+    new webpack.DefinePlugin({
+      'process.env': dotenvProcessedVariables,
     }),
   ], optimization: {
     splitChunks: {

@@ -1,8 +1,9 @@
 import * as React from 'react';
 import * as Autosuggest from 'react-autosuggest'
-import {CityWithId, InputWithAutocompleteProps} from "../../../types/interfaces";
 
 import * as cityData from "../../../../resources/constants/testCities.json";
+import {InputWithAutocompleteProps} from "../../../types/interfaces/propsAndState";
+import {CityWithId} from "../../../types/interfaces/domain";
 
 const InputWithAutocomplete: React.SFC<InputWithAutocompleteProps> = ({
                                                                         setInputValueAndId,
@@ -10,7 +11,8 @@ const InputWithAutocomplete: React.SFC<InputWithAutocompleteProps> = ({
                                                                         suggestions,
                                                                         onKeyDown,
                                                                         placeholder,
-                                                                        value
+                                                                        value,
+                                                                        disabled
                                                                       }) => {
 
   const onSuggestionsFetchRequested = ({value = ""}: { value: string }) => setSuggestions(getSuggestions(value));
@@ -53,6 +55,7 @@ const InputWithAutocomplete: React.SFC<InputWithAutocompleteProps> = ({
     onChange: onKeyDown,
     placeholder,
     value,
+    disabled,
   };
 
   return <Autosuggest

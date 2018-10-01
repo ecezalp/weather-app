@@ -3,8 +3,9 @@ import {connect} from 'react-redux';
 import InputWithAutocomplete from '../presentationals/elements/inputWithAutocomplete';
 
 import * as actions from '../../actions/actionCreators';
+import {InputWithAutocompleteState, Store} from "../../types/interfaces/propsAndState";
+import {CityWithId} from "../../types/interfaces/domain";
 
-import {CityWithId, InputWithAutocompleteState, Store} from "../../types/interfaces";
 
 const mapStateToProps = (state: Store): InputWithAutocompleteState => ({...state.autocomplete});
 

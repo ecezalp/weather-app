@@ -2,10 +2,9 @@ import {connect} from 'react-redux';
 
 import Landing from '../presentationals/pages/landing';
 import * as actions from '../../actions/actionCreators';
-import * as asyncActions from '../../actions/asyncActionCreators';
-
-import {CityWithId, LandingState, Store} from "../../types/interfaces";
-import {setInputValueAndId} from "../../actions/actionCreators";
+import * as asyncActions from '../../actions/asyncActions/asyncActionCreators';
+import {LandingState, Store} from "../../types/interfaces/propsAndState";
+import {CityWithId} from "../../types/interfaces/domain";
 
 const mapStateToProps = (state: Store): LandingState => ({...state.landing});
 

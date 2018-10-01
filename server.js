@@ -1,5 +1,6 @@
 const path = require("path");
 const express = require("express");
+require('dotenv').config();
 
 const DIST_DIR = path.join(__dirname, "dist"),
   PORT = 3000,

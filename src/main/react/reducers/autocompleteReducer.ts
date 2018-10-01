@@ -1,7 +1,7 @@
-
 import {SET_SUGGESTIONS} from "../actions/actionConstants";
-import {ActionWithPayload, InputWithAutocompleteState} from "../types/interfaces";
 import {AutocompleteActionType} from "../types/actions";
+import {InputWithAutocompleteState} from "../types/interfaces/propsAndState";
+import {ActionWithPayload} from "../types/interfaces/domain";
 
 const initialState: InputWithAutocompleteState = {
   suggestions: [],
