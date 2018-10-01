@@ -27,7 +27,6 @@ const landingReducer = (state = initialState,
     case SET_INPUT_VALUE_AND_ID:
       return {...state, inputValue: action.payload.name, cityId: action.payload.id};
     case SET_IS_FETCHING_DATA:
-      console.log("in the reducer")
       return {...state, isFetchingData: action.payload};
     default:
       return state;

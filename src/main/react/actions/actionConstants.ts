@@ -8,5 +8,5 @@ export const SET_INPUT_VALUE_AND_ID = 'SET_INPUT_VALUE_AND_ID';
 // autocomplete actions
 export const SET_SUGGESTIONS = 'SET_SUGGESTIONS';
 
-//weather actions
+//dashboard actions
 export const SET_IS_FETCHING_DATA = 'SET_IS_FETCHING_DATA';

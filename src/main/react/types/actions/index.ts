@@ -12,7 +12,7 @@ export type LandingActionType =
   typeof SET_INPUT_VALUE_AND_ID |
   typeof SET_IS_FETCHING_DATA;
 
-export type WeatherActionType =
+export type DashboardActionType =
   typeof SET_IS_FETCHING_DATA;
 
 export type AutocompleteActionType =

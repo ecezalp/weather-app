@@ -1,9 +1,10 @@
 import {CityWithId} from "./domain";
+import {RouteComponentProps} from "react-router";
 
 export interface Store {
   landing: LandingState,
   autocomplete: InputWithAutocompleteState,
-  weather: WeatherState,
+  dashboard: DashboardState,
 }
 
 export interface LandingState {
@@ -40,7 +41,7 @@ export interface InputWithAutocompleteProps {
   disabled: boolean,
 }
 
-export interface WeatherState {
+export interface DashboardState {
 
 }
 

@@ -14,5 +14,5 @@ export const setInputValueAndId = (suggestion: CityWithId) => createAction(SET_I
 // input with autocomplete action creators
 export const setSuggestions = (suggestions: CityWithId[]) => createAction(SET_SUGGESTIONS, suggestions);
 
-// weather action creators
+// dashboard action creators
 export const setIsFetchingData = (isFetchingData: boolean) => createAction(SET_IS_FETCHING_DATA, isFetchingData);

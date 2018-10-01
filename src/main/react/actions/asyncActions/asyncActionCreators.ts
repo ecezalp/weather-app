@@ -7,9 +7,15 @@ export const submitInput = (dispatch: any, inputValue: string, cityId: number) =
   if (!inputValue || cityId === 0) return dispatch(actions.setInputError("Please pick a city"));
   dispatch(actions.setIsFetchingData(true));
 
-  console.log(findCityById(cityId));
-
-  return axios.get(findCityById(cityId)).then(response => console.log(response.data));
+  return axios.get(findCityById(cityId))
+    .then(response => {
+      window.location.replace("/dashboard");
+      console.log(response);
+    })
+    .catch(error => {
+      dispatch(actions.setIsFetchingData(false));
+      dispatch(actions.setInputError("Could not fetch data"))
+    });
 
   // return axios.get(`/api/authentication`)
   //   .then(response => {
