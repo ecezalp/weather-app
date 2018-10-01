@@ -62,9 +62,6 @@ const Landing: React.SFC<LandingProps> = ({
 
   const spinner = <Spinner isVisible={isFetchingData}/>;
 
-  console.log(process);
-  console.log(process.env);
-
   return <div className="landing-container">
     {title}
     {intro}
