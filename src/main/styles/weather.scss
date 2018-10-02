@@ -1,10 +1,8 @@
 .image-container {
-  height: 200px;
+  justify-content: center;
+  display: flex;
   width: 200px;
-  background-color: $accent_color_2_compliment;
-  //display: flex;
-  //align-items: center;
-  //justify-content: center;
+  background-color: #faebd7;
 
   .sun {
     background-image: url("../resources/images/weather/sun.png");
@@ -12,6 +10,7 @@
     width: 100px;
     background-size: cover;
     background-position: 50% 50%;
+    margin: 50px;
   }
   .cloudy {
     background-image: url("../resources/images/weather/cloudy.png");
@@ -19,6 +18,7 @@
     width: 100px;
     background-size: cover;
     background-position: 50% 50%;
+    margin: 50px;
   }
   .cloud {
     background-image: url("../resources/images/weather/cloud.png");
@@ -26,6 +26,7 @@
     width: 100px;
     background-size: cover;
     background-position: 50% 50%;
+    margin: 50px;
   }
   .cloud-1 {
     background-image: url("../resources/images/weather/cloud-1.png");
@@ -33,13 +34,16 @@
     width: 100px;
     background-size: cover;
     background-position: 50% 50%;
+    margin: 50px;
   }
   .rain-1 {
     background-image: url("../resources/images/weather/rain-1.png");
     height: 100px;
     width: 100px;
-    background-size: cover;
-    background-position: 60% 40%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size:contain;
+    overflow:visible;
   }
   .rain-2 {
     background-image: url("../resources/images/weather/rain-2.png");
@@ -47,6 +51,7 @@
     width: 100px;
     background-size: cover;
     background-position: 50% 50%;
+    margin: 50px;
   }
   .storm {
     background-image: url("../resources/images/weather/storm.png");
@@ -54,6 +59,7 @@
     width: 100px;
     background-size: cover;
     background-position: 50% 50%;
+    margin: 50px;
   }
   .snowflake {
     background-image: url("../resources/images/weather/snowflake.png");
@@ -61,6 +67,7 @@
     width: 100px;
     background-size: cover;
     background-position: 50% 50%;
+    margin: 50px;
   }
   .tornado {
     background-image: url("../resources/images/weather/tornado.png");
@@ -68,6 +75,7 @@
     width: 100px;
     background-size: cover;
     background-position: 50% 50%;
+    margin: 50px;
   }
   .moon-6 {
     background-image: url("../resources/images/weather/moon-6.png");
@@ -75,6 +83,7 @@
     width: 100px;
     background-size: cover;
     background-position: 50% 50%;
+    margin: 50px;
   }
   .rain-3 {
     background-image: url("../resources/images/weather/rain-3.png");
@@ -82,5 +91,6 @@
     width: 100px;
     background-size: cover;
     background-position: 50% 50%;
+    margin: 50px;
   }
 }

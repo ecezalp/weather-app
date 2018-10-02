@@ -8,7 +8,7 @@ const DashBoard: React.SFC<DashboardProps> = ({weather, city}) => {
 
   const place = <div className="place">
     {weather.name}
-    <img src={findCountryFlagByCode("tr", 64)}/>
+    <img src={findCountryFlagByCode(city.country.toLowerCase(), 64)}/>
   </div>;
 
   const time = <div className="time">
