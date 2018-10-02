@@ -1,4 +1,3 @@
-
 export const findWeatherImageByCode = (code: string) => {
   switch (code) {
     case "01d":
@@ -37,5 +36,7 @@ export const findWeatherImageByCode = (code: string) => {
       return "snowflake";
     case "50n":
       return "tornado";
+    default:
+      return "";
   }
 };

@@ -1,6 +1,6 @@
 import {
   SET_INPUT_VALUE, SET_IS_INPUT_VISIBLE, SET_INPUT_ERROR, SET_SUGGESTIONS,
-  SET_SELECTED_CITY, SET_IS_FETCHING_DATA, SET_WEATHER, SET_IS_CELSIUS, SET_FORECAST
+  SET_SELECTED_CITY, SET_IS_FETCHING_DATA, SET_WEATHER, SET_IS_CELSIUS, SET_FORECAST,
 } from "./actionConstants";
 import {createAction} from "../types/actions";
 import {City, Forecast, Weather} from "../types/interfaces/domain";

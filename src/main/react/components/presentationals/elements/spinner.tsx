@@ -3,9 +3,7 @@ import {SpinnerProps} from "../../../types/interfaces/propsAndState";
 
 const Spinner: React.SFC<SpinnerProps> = ({isVisible}) => {
 
-  const style = {visibility: isVisible ? "visible" : "hidden"};
-
-  return <div className="spinner-wave" style={style}>
+  return <div className="spinner-wave" style={{visibility: isVisible ? "visible" : "hidden"}}>
     <div className="wave"/>
     <div className="wave"/>
     <div className="wave"/>

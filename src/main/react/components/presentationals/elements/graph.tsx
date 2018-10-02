@@ -11,8 +11,6 @@ export default function Graph({forecast, isCelsius}: { forecast: Forecast, isCel
 
   const getHoursFromForecast = (item: ForecastItem) => item.dt_txt.substring(11, 13);
 
-  console.log(forecast.list.map(getHoursFromForecast));
-
   const option = {
     tooltip: {},
     xAxis: {

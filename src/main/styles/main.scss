@@ -40,13 +40,6 @@ $accent_color_3: #f4c20d;
 
     .intro {
       padding: 5vh 0;
-
-      .artificial-link {
-        color: blue;
-        font-family: sans-serif;
-        text-decoration: underline;
-        cursor: pointer;
-      }
     }
 
     .animate {
@@ -117,11 +110,11 @@ $accent_color_3: #f4c20d;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
 
-   .calendar-container {
-     display: flex;
-     flex-direction: column;
-     justify-content: space-evenly;
-   }
+    .calendar-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
 
     .wind-speed-container {
       display: flex;
@@ -170,6 +163,7 @@ $accent_color_3: #f4c20d;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
 
       .place {
         display: flex;
@@ -223,6 +217,21 @@ $accent_color_3: #f4c20d;
   }
 }
 
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  .again {
+    align-self: flex-end;
+    padding-right: 5px;
+  }
+}
+
+.artificial-link {
+  color: blue;
+  font-family: sans-serif;
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 body {
   margin: 0 !important;

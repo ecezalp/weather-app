@@ -50,14 +50,24 @@ const DashBoard: React.SFC<DashboardProps> = ({weather, city, isCelsius, setIsCe
     <Graph forecast={forecast} isCelsius={isCelsius}/>
   </div>;
 
-  return <div className="dashboard">
-    {weatherArtTile}
-    {titleTile}
-    {degreeTile}
-    {dateTimeTile}
-    {mapTile}
-    {windTile}
-    {graphTile}
+  const again = <div
+    className="artificial-link again"
+    onClick={() => window.location.href = "/"}
+  >
+    again
+  </div>;
+
+  return <div className="dashboard-container">
+    <div className="dashboard">
+      {weatherArtTile}
+      {titleTile}
+      {degreeTile}
+      {dateTimeTile}
+      {mapTile}
+      {windTile}
+      {graphTile}
+    </div>
+    {again}
   </div>;
 };
 

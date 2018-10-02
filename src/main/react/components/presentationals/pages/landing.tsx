@@ -3,18 +3,20 @@ import InputWithAutocompleteContainer from "../../containers/InputWithAutocomple
 import {LandingProps} from "../../../types/interfaces/propsAndState";
 import Spinner from "../elements/spinner";
 
-const Landing: React.SFC<LandingProps> = ({
-                                            setIsInputVisible,
-                                            isInputVisible,
-                                            inputValue,
-                                            setInputValue,
-                                            selectedCity,
-                                            setSelectedCity,
-                                            handleSubmit,
-                                            inputError,
-                                            isFetchingData,
-                                            history
-                                          }) => {
+const Landing: React.SFC<LandingProps> = (props: LandingProps) => {
+
+  const {
+    setIsInputVisible,
+    isInputVisible,
+    inputValue,
+    setInputValue,
+    selectedCity,
+    setSelectedCity,
+    handleSubmit,
+    inputError,
+    isFetchingData,
+    history
+  } = props;
 
   const title = <h1>Ece's Weather App</h1>;
 
