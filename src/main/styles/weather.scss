@@ -1,0 +1,86 @@
+.image-container {
+  height: 200px;
+  width: 200px;
+  background-color: $accent_color_2_compliment;
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+
+  .sun {
+    background-image: url("../resources/images/weather/sun.png");
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  .cloudy {
+    background-image: url("../resources/images/weather/cloudy.png");
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  .cloud {
+    background-image: url("../resources/images/weather/cloud.png");
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  .cloud-1 {
+    background-image: url("../resources/images/weather/cloud-1.png");
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  .rain-1 {
+    background-image: url("../resources/images/weather/rain-1.png");
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    background-position: 60% 40%;
+  }
+  .rain-2 {
+    background-image: url("../resources/images/weather/rain-2.png");
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  .storm {
+    background-image: url("../resources/images/weather/storm.png");
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  .snowflake {
+    background-image: url("../resources/images/weather/snowflake.png");
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  .tornado {
+    background-image: url("../resources/images/weather/tornado.png");
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  .moon-6 {
+    background-image: url("../resources/images/weather/moon-6.png");
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  .rain-3 {
+    background-image: url("../resources/images/weather/rain-3.png");
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+}

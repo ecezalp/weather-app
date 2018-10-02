@@ -1,13 +1,13 @@
 import * as React from 'react';
 import {Route} from "react-router-dom";
 import LandingContainer from "./components/containers/landingContainer";
-import DashBoard from "./components/presentationals/pages/dashboard";
+import DashBoardContainer from "./components/containers/dashboardContainer";
 
 export default function Routes() {
 
-  const landing = () => <LandingContainer/>;
+  const landing = ({history}: {history: any}) => <LandingContainer history={history}/>;
 
-  const dashboard = () => <DashBoard/>;
+  const dashboard = () => <DashBoardContainer/>;
 
   return <div className="app-container">
     <Route exact path="/" component={landing}/>

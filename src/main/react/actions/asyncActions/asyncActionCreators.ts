@@ -1,29 +1,20 @@
 import axios from 'axios';
 
 import * as actions from "../actionCreators";
-import {findCityById} from "./endpoints";
+import {findCityById} from "../../constants/endpoints";
 
-export const submitInput = (dispatch: any, inputValue: string, cityId: number) => {
-  if (!inputValue || cityId === 0) return dispatch(actions.setInputError("Please pick a city"));
+export const handleSubmit = (dispatch: any, history: any, cityId: number) => {
+  if (cityId === 0) return dispatch(actions.setInputError("Please pick a city"));
   dispatch(actions.setIsFetchingData(true));
 
   return axios.get(findCityById(cityId))
     .then(response => {
-      window.location.replace("/dashboard");
-      console.log(response);
+      dispatch(actions.setWeather(response.data));
+      dispatch(actions.setIsFetchingData(false));
+      history.push("/dashboard");
     })
     .catch(error => {
       dispatch(actions.setIsFetchingData(false));
       dispatch(actions.setInputError("Could not fetch data"))
     });
-
-  // return axios.get(`/api/authentication`)
-  //   .then(response => {
-  //     persistStateOnLocalStorage(state);
-  //     setWindowLocation(response.data);
-  //   })
-  //   .catch(error => {
-  //     dispatch(actions.getTokenUrlFailure(error.data));
-  //     dispatch(actions.setFetchingTokenFalse());
-  //   });
 };

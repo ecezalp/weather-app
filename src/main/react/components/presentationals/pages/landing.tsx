@@ -4,15 +4,16 @@ import {LandingProps} from "../../../types/interfaces/propsAndState";
 import Spinner from "../elements/spinner";
 
 const Landing: React.SFC<LandingProps> = ({
-                                            cityId,
                                             setIsInputVisible,
                                             isInputVisible,
                                             inputValue,
                                             setInputValue,
-                                            setInputValueAndId,
-                                            submitInput,
+                                            selectedCity,
+                                            setSelectedCity,
+                                            handleSubmit,
                                             inputError,
-                                            isFetchingData
+                                            isFetchingData,
+                                            history
                                           }) => {
 
   const title = <h1>Ece's Weather App</h1>;
@@ -38,7 +39,7 @@ const Landing: React.SFC<LandingProps> = ({
 
   const handleTextChange = (e: any) => {
     if (e.key === "Backspace") {
-      return setInputValueAndId({name: e.target.value, id: 0, country: ""});
+      return setSelectedCity({name: e.target.value, id: 0, country: ""});
     }
     e.type === "change" && setInputValue(e.target.value);
   };
@@ -51,7 +52,7 @@ const Landing: React.SFC<LandingProps> = ({
   />;
 
   const submitButton = <button
-    onClick={() => submitInput(inputValue, cityId)}>
+    onClick={() => handleSubmit(history, selectedCity.id)}>
     Submit
   </button>;
 
@@ -67,7 +68,7 @@ const Landing: React.SFC<LandingProps> = ({
     {intro}
     {withAnimation(textField, isInputVisible)}
     {inputErrorMessage}
-    {withAnimation(submitButton, cityId !== 0)}
+    {withAnimation(submitButton, selectedCity.id !== 0)}
     {spinner}
   </div>;
 };

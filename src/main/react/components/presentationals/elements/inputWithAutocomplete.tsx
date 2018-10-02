@@ -1,12 +1,13 @@
 import * as React from 'react';
 import * as Autosuggest from 'react-autosuggest'
 
-import * as cityData from "../../../../resources/constants/testCities.json";
+import * as cityData from "../../../../resources/json/testCities.json";
 import {InputWithAutocompleteProps} from "../../../types/interfaces/propsAndState";
-import {CityWithId} from "../../../types/interfaces/domain";
+import {City} from "../../../types/interfaces/domain";
+import {findCountryFlagByCode} from "../../../constants/endpoints";
 
 const InputWithAutocomplete: React.SFC<InputWithAutocompleteProps> = ({
-                                                                        setInputValueAndId,
+                                                                        setSelectedCity,
                                                                         setSuggestions,
                                                                         suggestions,
                                                                         onKeyDown,
@@ -20,7 +21,7 @@ const InputWithAutocomplete: React.SFC<InputWithAutocompleteProps> = ({
   const onSuggestionsClearRequested = () => setSuggestions([]);
 
   const getSuggestions = (value: string) => {
-    let suggestions: CityWithId[] = [];
+    let suggestions: City[] = [];
     for (let city of cityData) {
       if (suggestions.length > 4) break;
       if (filterCity(city, value)) {
@@ -30,22 +31,22 @@ const InputWithAutocomplete: React.SFC<InputWithAutocompleteProps> = ({
     return suggestions;
   };
 
-  const filterCity = (city: CityWithId, value: string = "") =>
+  const filterCity = (city: City, value: string = "") =>
     city.name.toLowerCase().slice(0, value.length) === value.trim().toLowerCase();
 
-  const getSuggestionValue = (suggestion: CityWithId) =>
+  const getSuggestionValue = (suggestion: City) =>
     suggestion.name;
 
-  const renderSuggestion = (suggestion: CityWithId) => {
+  const renderSuggestion = (suggestion: City) => {
     const bold: string = suggestion.name.slice(0, value.length);
     const normal: string = suggestion.name.slice(value.length, suggestion.name.length);
-    const onClick = () => setInputValueAndId(suggestion);
+    const onClick = () => setSelectedCity(suggestion);
 
     return <div className="suggestion" onClick={onClick}>
       <span className="bold">{bold}</span>
       {normal}
       <span>
-        <img src={`https://www.countryflags.io/${suggestion.country}/flat/24.png`}/>
+        <img src={findCountryFlagByCode(suggestion.country)}/>
       </span>
     </div>;
   };

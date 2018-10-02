@@ -1,11 +1,14 @@
 import {connect} from 'react-redux';
 
-import Landing from '../presentationals/pages/landing';
-import {DashboardState, Store} from "../../types/interfaces/propsAndState";
+import {DashboardProps, DashboardState, Store} from "../../types/interfaces/propsAndState";
+import DashBoard from "../presentationals/pages/dashboard";
 
-const mapStateToProps = (state: Store): DashboardState => ({...state.dashboard});
+const mapStateToProps = (state: Store): DashboardProps => ({
+  ...state.dashboard,
+  city: state.landing.selectedCity,
+});
 
 export default connect(
   mapStateToProps,
   null,
-)(Landing);
+)(DashBoard);

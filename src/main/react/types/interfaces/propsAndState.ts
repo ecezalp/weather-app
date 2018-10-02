@@ -1,5 +1,4 @@
-import {CityWithId} from "./domain";
-import {RouteComponentProps} from "react-router";
+import {City, Weather} from "./domain";
 
 export interface Store {
   landing: LandingState,
@@ -11,30 +10,31 @@ export interface LandingState {
   isInputVisible: boolean,
   inputValue: string,
   inputError: string,
-  cityId: number,
+  selectedCity: City,
   isFetchingData: boolean,
 }
 
 export interface LandingProps {
-  setInputValueAndId: (suggestion: CityWithId) => any,
+  setSelectedCity: (selectedCity: City) => any,
   setIsInputVisible: (isInputVisible: boolean) => any,
   setInputValue: (inputValue: string) => any,
-  submitInput: (inputValue: string, cityId: number) => any,
+  handleSubmit: (inputValue: string, cityId: number) => any,
   isInputVisible: boolean,
   inputValue: string,
   inputError: string,
-  cityId: number,
+  selectedCity: City,
   isFetchingData: boolean,
+  history: any,
 }
 
 export interface InputWithAutocompleteState {
-  suggestions: CityWithId[];
+  suggestions: City[];
 }
 
 export interface InputWithAutocompleteProps {
-  setInputValueAndId: (suggestion: CityWithId) => any,
-  setSuggestions: (payload: CityWithId[]) => any,
-  suggestions: CityWithId[],
+  setSelectedCity: (selectedCity: City) => any,
+  setSuggestions: (payload: City[]) => any,
+  suggestions: City[],
   placeholder: string,
   onKeyDown: (payload: any) => any,
   value: string,
@@ -42,7 +42,12 @@ export interface InputWithAutocompleteProps {
 }
 
 export interface DashboardState {
+  weather: Weather,
+}
 
+export interface DashboardProps {
+  weather: Weather,
+  city: City,
 }
 
 export interface SpinnerProps {

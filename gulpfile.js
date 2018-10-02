@@ -90,7 +90,6 @@ const WEBPACK_BUILD_CONFIG = _.merge({}, WEBPACK_SRC_CONFIG, {
 
 const WEBPACK_STYLE_CONFIG = {
   entry: './src/main/styles/main.scss',
-  mode: "production",
   module: {
     rules: [
       {
@@ -100,6 +99,7 @@ const WEBPACK_STYLE_CONFIG = {
           {
             loader: "css-loader",
             options: {
+              url: false,
               minimize: {
                 safe: true
               }
