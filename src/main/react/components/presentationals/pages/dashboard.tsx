@@ -1,44 +1,57 @@
 import * as React from 'react';
 import {DashboardProps} from "../../../types/interfaces/propsAndState";
 import {findCountryFlagByCode} from "../../../constants/endpoints";
-import * as dateFns from 'date-fns';
 import {findWeatherImageByCode} from "../../../constants/weatherIcons";
+import Map from "../elements/map";
+import Degree from "../elements/degree";
+import DateTime from "../elements/dateTime";
 
-const DashBoard: React.SFC<DashboardProps> = ({weather, city}) => {
+const DashBoard: React.SFC<DashboardProps> = ({weather, city, isCelsius, setIsCelsius}) => {
 
-  const place = <div className="place">
-    {weather.name}
-    <img src={findCountryFlagByCode(city.country.toLowerCase(), 64)}/>
+  const titleTile = <div className="title paper">
+    <div className="place">
+      {weather.name}
+      <img src={findCountryFlagByCode(city.country.toLowerCase(), 64)}/>
+    </div>
   </div>;
 
-  const time = <div className="time">
-    <div>{dateFns.format(new Date(), 'MMMM D, YYYY')}</div>
-    <div>{dateFns.format(new Date(), 'hh:mm:ss A')} PST</div>
+  const weatherArtTile = <div className="temperature paper">
+    <div className="image-container">
+      <div className={findWeatherImageByCode(weather.weather[0].icon)}/>
+    </div>
+    <div className="status">
+      {weather.weather[0].description}
+    </div>
   </div>;
 
-  const status = <div className="status">
-    {weather.weather[0].description}
+  const dateTimeTile = <DateTime/>;
+
+  const mapTile = <div className="paper">
+    <Map lat={weather.coord.lat} lon={weather.coord.lon}/>
   </div>;
 
-  const title = <div className="title paper">
-    {place}
-  </div>;
+  const degreeTile = <Degree
+    weather={weather}
+    isCelsius={isCelsius}
+    setIsCelsius={setIsCelsius}
+  />;
 
-  const temperatureImage = <div className="image-container">
-    <div className={findWeatherImageByCode(weather.weather[0].icon)}/>
-  </div>;
-
-  const temperature = <div className="temperature paper">
-    {temperatureImage}
-    {status}
+  const windTile = <div className="paper image-container">
+    <div className="wind"/>
+    <div className="wind-speed-container">
+      <div className="wind-speed">{weather.wind.speed} m/s</div>
+      <i className="fas fa-arrow-up" style={{transform: `rotate(${weather.wind.deg}deg)`}}/>
+    </div>
   </div>;
 
   return <div className="dashboard">
-    {temperature}
-    {title}
-    <div className="paper">
-      {time}
-    </div>
+    {weatherArtTile}
+    {titleTile}
+    {degreeTile}
+    {dateTimeTile}
+    {mapTile}
+    {windTile}
+    <div className="paper"/>
     <div className="paper"/>
     <div className="paper"/>
     <div className="paper"/>

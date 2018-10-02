@@ -1,4 +1,5 @@
 import {
+  SET_IS_CELSIUS,
   SET_WEATHER,
 } from "../actions/actionConstants";
 import {DashboardActionType} from "../types/actions";
@@ -6,6 +7,7 @@ import {DashboardState} from "../types/interfaces/propsAndState";
 import {ActionWithPayload} from "../types/interfaces/domain";
 
 const initialState: DashboardState = {
+  isCelsius: true,
   weather: {"coord":{"lon":133.53,"lat":35.38},
     "weather":[{"id":521,
       "main":"Rain",
@@ -38,6 +40,8 @@ const dashboardReducer = (state = initialState,
   switch (action.type) {
     case SET_WEATHER:
       return {...state, weather: action.payload};
+    case SET_IS_CELSIUS:
+      return {...state, isCelsius: action.payload};
     default:
       return state;
   }

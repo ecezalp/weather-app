@@ -1,6 +1,6 @@
 import {
-  SET_INPUT_VALUE, SET_IS_INPUT_VISIBLE, SUBMIT_INPUT, SET_INPUT_ERROR, SET_SUGGESTIONS,
-  SET_SELECTED_CITY, SET_IS_FETCHING_DATA, SET_WEATHER
+  SET_INPUT_VALUE, SET_IS_INPUT_VISIBLE, SET_INPUT_ERROR, SET_SUGGESTIONS,
+  SET_SELECTED_CITY, SET_IS_FETCHING_DATA, SET_WEATHER, SET_IS_CELSIUS
 } from "./actionConstants";
 import {createAction} from "../types/actions";
 import {City, Weather} from "../types/interfaces/domain";
@@ -17,3 +17,4 @@ export const setSuggestions = (suggestions: City[]) => createAction(SET_SUGGESTI
 // dashboard action creators
 export const setIsFetchingData = (isFetchingData: boolean) => createAction(SET_IS_FETCHING_DATA, isFetchingData);
 export const setWeather = (data: Weather) => createAction(SET_WEATHER, data);
+export const setIsCelsius = (isCelsius: boolean) => createAction(SET_IS_CELSIUS, isCelsius);

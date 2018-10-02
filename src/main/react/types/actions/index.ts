@@ -1,6 +1,6 @@
 import {
   SET_INPUT_ERROR, SET_INPUT_VALUE, SET_IS_INPUT_VISIBLE,
-  SUBMIT_INPUT, SET_SUGGESTIONS, SET_IS_FETCHING_DATA, SET_WEATHER, SET_SELECTED_CITY
+  SUBMIT_INPUT, SET_SUGGESTIONS, SET_IS_FETCHING_DATA, SET_WEATHER, SET_SELECTED_CITY, SET_IS_CELSIUS
 } from "../../actions/actionConstants"
 import {Action, ActionWithPayload} from "../interfaces/domain";
 
@@ -13,7 +13,8 @@ export type LandingActionType =
   typeof SET_IS_FETCHING_DATA;
 
 export type DashboardActionType =
-  typeof SET_WEATHER;
+  typeof SET_WEATHER |
+  typeof SET_IS_CELSIUS;
 
 export type AutocompleteActionType =
   typeof SET_SUGGESTIONS;

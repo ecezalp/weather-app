@@ -41,13 +41,21 @@ export interface InputWithAutocompleteProps {
   disabled: boolean,
 }
 
+export interface MapProps {
+  lat: number,
+  lon: number,
+}
+
 export interface DashboardState {
   weather: Weather,
+  isCelsius: boolean,
 }
 
 export interface DashboardProps {
   weather: Weather,
   city: City,
+  isCelsius: boolean,
+  setIsCelsius: (isCelsius: boolean) => any;
 }
 
 export interface SpinnerProps {
