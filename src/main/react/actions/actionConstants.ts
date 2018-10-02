@@ -11,4 +11,5 @@ export const SET_SUGGESTIONS = 'SET_SUGGESTIONS';
 //dashboard actions
 export const SET_IS_FETCHING_DATA = 'SET_IS_FETCHING_DATA';
 export const SET_WEATHER = 'SET_WEATHER';
+export const SET_FORECAST = 'SET_FORECAST';
 export const SET_IS_CELSIUS = 'SET_IS_CELSIUS';

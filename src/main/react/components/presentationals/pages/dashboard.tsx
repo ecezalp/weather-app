@@ -5,8 +5,9 @@ import {findWeatherImageByCode} from "../../../constants/weatherIcons";
 import Map from "../elements/map";
 import Degree from "../elements/degree";
 import DateTime from "../elements/dateTime";
+import {default as Graph} from "../elements/graph";
 
-const DashBoard: React.SFC<DashboardProps> = ({weather, city, isCelsius, setIsCelsius}) => {
+const DashBoard: React.SFC<DashboardProps> = ({weather, city, isCelsius, setIsCelsius, forecast}) => {
 
   const titleTile = <div className="title paper">
     <div className="place">
@@ -44,6 +45,11 @@ const DashBoard: React.SFC<DashboardProps> = ({weather, city, isCelsius, setIsCe
     </div>
   </div>;
 
+  const graphTile = <div className="paper graph">
+    <div className="graph-title">Five Day Forecast</div>
+    <Graph forecast={forecast} isCelsius={isCelsius}/>
+  </div>;
+
   return <div className="dashboard">
     {weatherArtTile}
     {titleTile}
@@ -51,10 +57,7 @@ const DashBoard: React.SFC<DashboardProps> = ({weather, city, isCelsius, setIsCe
     {dateTimeTile}
     {mapTile}
     {windTile}
-    <div className="paper"/>
-    <div className="paper"/>
-    <div className="paper"/>
-    <div className="paper"/>
+    {graphTile}
   </div>;
 };
 

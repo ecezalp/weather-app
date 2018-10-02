@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {Weather} from "../../../types/interfaces/domain";
+import {getCelsiusFromKelvin, getFahrenheitFromKelvin} from "../../../helpers/temperatureHelpers";
 
 const Degree = ({weather, isCelsius, setIsCelsius}:
                   {weather: Weather, isCelsius: boolean, setIsCelsius: (isCelsius: boolean) => any }) => {
@@ -10,10 +11,6 @@ const Degree = ({weather, isCelsius, setIsCelsius}:
         {letter}
       </div>
     </div>;
-
-  const getCelsiusFromKelvin = (degree: number) => degree - 273.15;
-
-  const getFahrenheitFromKelvin = (degree: number) => ((9 * (degree - 273)) / 5) + 32;
 
   const displayDegree = (degree: number) => isCelsius
     ? getCelsiusFromKelvin(degree)

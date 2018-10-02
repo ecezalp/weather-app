@@ -1,4 +1,4 @@
-import {City, Weather} from "./domain";
+import {City, Forecast, Weather} from "./domain";
 
 export interface Store {
   landing: LandingState,
@@ -49,11 +49,13 @@ export interface MapProps {
 export interface DashboardState {
   weather: Weather,
   isCelsius: boolean,
+  forecast: Forecast,
 }
 
 export interface DashboardProps {
   weather: Weather,
   city: City,
+  forecast: Forecast,
   isCelsius: boolean,
   setIsCelsius: (isCelsius: boolean) => any;
 }

@@ -50,6 +50,50 @@ export interface Weather {
   visibility: number,
 }
 
+export interface Forecast {
+  cod: string,
+  message: number,
+  cnt: number,
+  list: ForecastItem[],
+  city: ForecastCity,
+}
+
+export interface ForecastItem {
+  "dt": number,
+  "main": {
+    "temp": number,
+    "temp_min": number,
+    "temp_max": number,
+    "pressure": number,
+    "sea_level": number,
+    "grnd_level": number,
+    "humidity": number,
+    "temp_kf": number,
+  },
+  "weather": Description[],
+  "clouds": {
+    "all": number,
+  },
+  "wind": {
+    "speed": number,
+    "deg": number,
+  },
+  "snow": {},
+  "sys": {
+    "pod": string,
+  },
+  "dt_txt": string,
+}
+
+export interface ForecastCity {
+  name: string,
+  country: string,
+  id: number,
+  coord: {
+    lon: number, lat: number
+  },
+}
+
 export interface Description {
   description: string,
   icon: string,
