@@ -12,4 +12,6 @@ app.get("*", function (req, res) {
   res.sendFile(path.join(DIST_DIR, "index.html"));
 });
 
-app.listen(PORT);
+const server = app.listen(PORT,
+  () => console.log(`ece's weather app listening at http://localhost:${server.address().port}`)
+);

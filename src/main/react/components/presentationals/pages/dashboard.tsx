@@ -54,7 +54,7 @@ const DashBoard: React.SFC<DashboardProps> = ({weather, city, isCelsius, setIsCe
     className="artificial-link again"
     onClick={() => window.location.href = "/"}
   >
-    again
+    another city
   </div>;
 
   return <div className="dashboard-container">

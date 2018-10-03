@@ -28,8 +28,8 @@ const Landing: React.SFC<LandingProps> = (props: LandingProps) => {
     </span>;
 
   const intro = <div className="intro">
-    You are sitting on your couch, sipping on your coffee. Suddenly, you wonder what is outside: is it a wet fog, or
-    the warming rays of the new sun? The curtains are closed. You remember the name of the {city} you live in.
+    You are sitting on your couch, sipping on your coffee. Suddenly, you wonder what is outside: a wet fog, or
+    the warming rays of the new sun... The curtains are closed. You remember the name of the {city} you live in.
   </div>;
 
   const withAnimation = (element: any, condition: boolean) => <div

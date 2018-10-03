@@ -5,10 +5,10 @@ import {applyMiddleware, createStore} from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/index';
 
-import "../styles/main.scss";
+import '../styles/main.scss';
 
-import {BrowserRouter} from "react-router-dom";
-import Routes from "./routes";
+import {BrowserRouter} from 'react-router-dom';
+import Routes from './routes';
 
 
 export default function App() {
@@ -16,9 +16,9 @@ export default function App() {
   const store = createStore(rootReducer, applyMiddleware(thunk));
 
   return <Provider store={store}>
-      <BrowserRouter>
-        <Routes/>
-      </BrowserRouter>
+    <BrowserRouter>
+      <Routes/>
+    </BrowserRouter>
   </Provider>;
 }
 

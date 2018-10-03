@@ -17,9 +17,7 @@ const MapWithAMarker = withGoogleMap((props: any) =>
       fullscreenControl: false
     }}
   >
-    <Marker
-      position={props.children[0]}
-    />
+    <Marker position={props.children[0]}/>
   </GoogleMap>
 );
 

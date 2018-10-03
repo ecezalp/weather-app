@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {Route} from "react-router-dom";
-import LandingContainer from "./components/containers/landingContainer";
-import DashBoardContainer from "./components/containers/dashboardContainer";
+import {Route} from 'react-router-dom';
+import LandingContainer from './components/containers/landingContainer';
+import DashBoardContainer from './components/containers/dashboardContainer';
 
 export default function Routes() {
 

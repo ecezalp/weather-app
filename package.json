@@ -7,6 +7,7 @@
     "start": "./node_modules/gulp/bin/gulp.js start"
   },
   "dependencies": {
+    "date-fns": "^1.29.0",
     "echarts": "^4.2.0-rc.1",
     "echarts-for-react": "^2.0.15-beta.0",
     "fs": "0.0.1-security",
@@ -37,7 +38,6 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.7",
-    "date-fns": "^1.29.0",
     "dotenv": "^6.0.0",
     "dotenv-webpack": "^1.5.7",
     "file-loader": "^1.1.6",

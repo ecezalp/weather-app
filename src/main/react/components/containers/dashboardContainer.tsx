@@ -1,9 +1,7 @@
 import {connect} from 'react-redux';
-
-import {Store} from "../../types/interfaces/propsAndState";
-import DashBoard from "../presentationals/pages/dashboard";
-
 import * as actions from '../../actions/actionCreators';
+import {Store} from '../../types/interfaces/propsAndState';
+import DashBoard from '../presentationals/pages/dashboard';
 
 const mapStateToProps = (state: Store): any => ({
   ...state.dashboard,
