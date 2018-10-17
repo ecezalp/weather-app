@@ -1,0 +1,80 @@
+.image-container {
+  justify-content: center;
+  display: flex;
+  min-width: 220px;
+  background-color: azure;
+
+  .sun, .cloudy, .cloud, .cloud-1, .rain-1, .rain-2, .storm, .snowflake, .tornado, .moon-6, .rain-3 {
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    background-position: 50% 50%;
+    margin: 50px;
+  }
+
+  .sun {
+    background-image: url("../resources/images/weather/sun.png");
+  }
+  .cloudy {
+    background-image: url("../resources/images/weather/cloudy.png");
+  }
+  .cloud {
+    background-image: url("../resources/images/weather/cloud.png");
+  }
+  .cloud-1 {
+    background-image: url("../resources/images/weather/cloud-1.png");
+  }
+  .rain-1 {
+    background-image: url("../resources/images/weather/rain-1.png");
+  }
+  .rain-2 {
+    background-image: url("../resources/images/weather/rain-2.png");
+  }
+  .storm {
+    background-image: url("../resources/images/weather/storm.png");
+  }
+  .snowflake {
+    background-image: url("../resources/images/weather/snowflake.png");
+  }
+  .tornado {
+    background-image: url("../resources/images/weather/tornado.png");
+  }
+  .moon-6 {
+    background-image: url("../resources/images/weather/moon-6.png");
+  }
+  .rain-3 {
+    background-image: url("../resources/images/weather/rain-3.png");
+  }
+  .wind {
+    background-image: url("../resources/images/weather/wind.png");
+    height: 50px;
+    width: 50px;
+    background-size: cover;
+    background-position: 50% 50%;
+    margin-top: 50px;
+    margin-left: 82px;
+  }
+}
+
+.image-container-alt {
+  align-items: center;
+  display: flex;
+  min-width: 50px;
+  background-color: linen;
+  justify-content: space-evenly;
+
+  .calendar, .clock {
+    height: 50px;
+    width: 50px;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+
+  .calendar {
+    background-image: url("../resources/images/calendar/calendar.png");
+  }
+
+  .clock {
+    background-image: url("../resources/images/calendar/clock.png");
+  }
+}

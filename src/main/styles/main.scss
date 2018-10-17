@@ -1,0 +1,307 @@
+$background_color: #ADDFFF;
+$accent_color_1: #FDF6E3;
+$accent_color_1_compliment: #CB4B15;
+$accent_color_2: #F2DEDD;
+$accent_color_2_compliment: #CF7C7B;
+$accent_color_3: #f4c20d;
+
+@import "spinner";
+@import "weather";
+
+.app-container {
+  background-color: $background_color;
+  width: 100%;
+  height: 100vh;
+  padding-top: 5vh;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 0.25px;
+  line-height: 1.5;
+  font-family: "Quicksand", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-y: auto;
+
+  .landing-container {
+    padding-top: 5vh;
+    min-width: 300px;
+    min-height: 600px;
+    width: 20vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .intro {
+      padding: 5vh 0;
+    }
+
+    .animate {
+      display: flex;
+      justify-content: center;
+      -webkit-animation: fadein 1s;
+    }
+
+    input {
+      font-size: 1.1rem;
+      margin-top: 5vh;
+      width: 10vw;
+      min-width: 200px;
+    }
+
+    input::placeholder {
+      color: gray;
+      font-weight: normal;
+    }
+
+    button {
+      margin-top: 3vh;
+      background-color: #f2dedd;
+      color: #cf7c7b;
+      width: 30%;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      padding: 5px;
+    }
+
+    .input-error {
+      color: $accent_color_1_compliment;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      width: 10vw;
+      min-width: 200px;
+      list-style-type: none;
+    }
+
+    .suggestion {
+      background-color: #fdf6e3;
+      color: #cb4b15;
+      padding: 5px;
+      border-bottom: 1px solid #cb4b15;
+      display: flex;
+      align-items: center;
+
+      img {
+        padding-left: 5px;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+    }
+
+    .suggestion:hover {
+      background-color: $accent_color_2;
+      cursor: pointer;
+    }
+  }
+
+  .dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    .calendar-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+    .wind-speed-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 21px;
+      padding-top: 40px;
+
+      i {
+        padding: 0 10px;
+      }
+    }
+
+    .degree {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      .degree-number {
+        font-weight: 100;
+        font-size: 73px;
+        padding-top: 20px;
+      }
+
+      .degree-types {
+        display: flex;
+
+        .temperature-letter {
+          padding: 0 5px;
+          margin: 0 5px;
+          cursor: pointer;
+          background-color: lightpink;
+        }
+      }
+    }
+
+    .status {
+      text-align: center;
+      font-size: 1.2rem;
+      padding: 0 10px;
+    }
+
+    .title {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .place {
+        display: flex;
+        flex-direction: column;
+        font-size: 2rem;
+        padding: 0 10px;
+        align-items: center;
+      }
+
+      .time {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.2rem;
+        padding: 0 10px;
+      }
+
+      img {
+        padding: 5px 10px;
+      }
+    }
+
+    .graph {
+      background-color: linen;
+      grid-area: 3 / 1 / 3 / 4;
+
+      .graph-title {
+        color: gray;
+        padding: 0 20px;
+        margin-bottom: -25px;
+      }
+
+      .echarts-for-react {
+        height: 230px !important;
+      }
+    }
+  }
+
+  .paper {
+    overflow: hidden;
+    min-width: 200px;
+    background: $accent_color_1;
+    border-radius: 2px;
+    display: inline-block;
+    margin: 5px;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  }
+
+  .paper:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+}
+
+.dashboard-container {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+
+  .again {
+    align-self: flex-end;
+    padding-right: 5px;
+  }
+
+}
+
+.artificial-link {
+  color: blue;
+  font-family: sans-serif;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 440px) {
+  .app-container {
+    .paper {
+      //min-width: 110px !important;
+      min-width: 0 !important;
+      width: 48vw !important;
+      height: 48vw !important;
+      float: left !important;
+      margin: 1vw !important;
+    }
+
+    .dashboard {
+      display: inline !important;
+    }
+
+    .image-container {
+      min-width: 0 !important;
+      div {
+        margin: 0 !important;
+      }
+    }
+
+    .image-container-alt {
+      div {
+        padding: 2vmin !important;
+        height: 39px;
+      }
+
+    }
+
+    .dashboard-container {
+      width: 100vw;
+
+      .dashboard .title {
+        padding: 0 !important;
+      }
+
+      .dashboard .title .place {
+        font-size: 1rem !important;
+      }
+
+      .dashboard .degree .degree-number {
+        font-size: 3rem !important;
+      }
+
+      .graph {
+        width: 98vw !important;
+      }
+
+      .degree-number {
+        padding: 0 !important;
+      }
+
+    }
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  margin: 0 !important;
+}
+
+#react {
+  height: 100vh;
+  width: 100vw;
+}
+
