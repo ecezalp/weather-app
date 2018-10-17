@@ -149,7 +149,7 @@ const WEBPACK_STYLE_CONFIG = {
 var plumber = require('gulp-plumber');
 var nodemon = require('gulp-nodemon');
 
-gulp.task('build', ['getIndexHtml', 'getLogo', 'buildStyle', 'buildCode']);
+gulp.task('build', ['buildStyle', 'buildCode']);
 
 gulp.task('watch', ['watchStyle', 'watchCode']);
 

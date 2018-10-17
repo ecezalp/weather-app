@@ -1,5 +1,5 @@
+dist
+.idea
+node_modules
 .DS_Store
 .env
-.idea
-dist
-node_modules
